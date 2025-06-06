@@ -206,9 +206,6 @@
 <option value="Blindagem">Blindagem</option>
       </select>
 
-        <label for="cupom">Código do cupom (opcional)</label>
-      <input type="text" id="cupom" placeholder="Digite seu cupom (se tiver)" />
-
       <button type="submit">Confirmar Agendamento</button>
     </form>
   </section>
@@ -223,8 +220,6 @@
       const telefone = document.getElementById('telefone').
 
       const mensagem = `Olá, Raíssa! Gostaria de agendar um horário:\n\n🧍‍♀️ Nome: ${nome}\n📅 Data: ${data}\n🕒 Hora: ${hora}\n💅 Procedimento: ${procedimento}\n📱 WhatsApp da Cliente: ${telefone}`;
-        if (cupom !== "") {
-    mensagem += ` Tenho um cupom: ${cupom}`;
       const numeroRaissa = "5579998907871";
       const url = `https://wa.me/${numeroRaissa}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
