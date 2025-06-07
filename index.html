@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=0.9" />
   <title>Raissa Nail Design</title>
- <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -163,7 +163,6 @@
   <header>
     <img src="https://i.postimg.cc/4xPztxYP/IMG-4444.png" alt="Logomarca Raissa Ribeiro" />
     <p>Alongamentos de Alto Padrão</p>
-    
   </header>
 
   <!-- Agendamento -->
@@ -171,18 +170,18 @@
     <h2>Agende seu horário</h2>
     <form onsubmit="enviarWhatsApp(event)">
       <label for="data">Data:</label>
-      <input type="date" id="data" name="data"                required>
+      <input type="date" id="data" name="data" required>
+
       <label for="horario">Horário:</label>
-<select id="horario" name="horario" required>
-  <option value="">Selecione um horário</option>
-  <option value="08:30">08:30</option>
-  <option value="10:30">10:30</option>
-  <option value="13:30">13:30</option>
-  <option value="15:30">15:30</option>
-  <option value="17:30">17:30</option>
-  <option value="19:30">19:30</option>
-</select>
-    
+      <select id="horario" name="horario" required>
+        <option value="">Selecione um horário</option>
+        <option value="08:30">08:30</option>
+        <option value="10:30">10:30</option>
+        <option value="13:30">13:30</option>
+        <option value="15:30">15:30</option>
+        <option value="17:30">17:30</option>
+        <option value="19:30">19:30</option>
+      </select>
 
       <label for="nome">Nome da Cliente:</label>
       <input type="text" id="nome" name="nome" required>
@@ -200,31 +199,46 @@
         <option value="Manutenção">Manutenção</option>
         <option value="Postiça Realista">Postiça Realista</option>
         <option value="Remoção">Remoção</option>
-  
- <option value="Reconstrução">Reconstrução de unhas do pé</option>
-<option value="Esmaltação em gel (Pé)">Esmaltação em Gel (Pé)</option>
-<option value="Blindagem">Blindagem</option>
+        <option value="Reconstrução">Reconstrução de unhas do pé</option>
+        <option value="Esmaltação em gel (Pé)">Esmaltação em Gel (Pé)</option>
+        <option value="Blindagem">Blindagem</option>
       </select>
+
+      <label for="cupom">Cupom de Desconto:</label>
+      <input type="text" id="cupom" name="cupom" placeholder="Digite o código, se tiver">
 
       <button type="submit">Confirmar Agendamento</button>
     </form>
   </section>
 
-  <script>
-    function enviarWhatsApp(event) {
-      event.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const data = document.getElementById('data').value;
-     const hora = document.getElementById('horario').value;
-      const procedimento = document.getElementById('procedimento').value;
-      const telefone = document.getElementById('telefone').value;
+ <script>
+  function enviarWhatsApp(event) {
+    event.preventDefault(); // Impede o envio tradicional do formulário
 
-      const mensagem = `Olá, Raíssa! Gostaria de agendar um horário:\n\n🧍‍♀️ Nome: ${nome}\n📅 Data: ${data}\n🕒 Hora: ${hora}\n💅 Procedimento: ${procedimento}\n📱 WhatsApp da Cliente: ${telefone}`;
-      const numeroRaissa = "5579998907871";
-      const url = `https://wa.me/${numeroRaissa}?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, '_blank');
+    const nome = document.getElementById('nome').value;
+    const data = document.getElementById('data').value;
+    const hora = document.getElementById('horario').value;
+    const procedimento = document.getElementById('procedimento').value;
+    const telefone = document.getElementById('telefone').value;
+    const cupom = document.getElementById('cupom').value.trim();
+
+    let mensagem = `Olá, Raíssa! Gostaria de agendar um horário:%0A%0A`;
+    mensagem += `🧍‍♀️ Nome: ${nome}%0A`;
+    mensagem += `📅 Data: ${data}%0A`;
+    mensagem += `🕒 Hora: ${hora}%0A`;
+    mensagem += `💅 Procedimento: ${procedimento}%0A`;
+    mensagem += `📱 WhatsApp da Cliente: ${telefone}`;
+
+    if (cupom !== '') {
+      mensagem += `%0A🎁 Cupom de Desconto: ${cupom}`;
     }
-  </script>
+
+    const numeroRaissa = "5579998907871";
+    const url = `https://wa.me/${numeroRaissa}?text=${mensagem}`;
+    
+    window.location.href = url; // substitui window.open por uma navegação direta
+  }
+</script>
 
   <img src="https://i.postimg.cc/3xnSvGft/Story-instagram-agenda-aberta-est-tica-minimalista-zip-1.png" alt="Procedimentos 1" />
 
@@ -239,16 +253,17 @@
       <img src="https://i.postimg.cc/XJFQ60vC/ba49b8d7-3777-4dcd-a01e-dcf469014df1.jpg" alt="Unha decorada 5" />
       <img src="https://i.postimg.cc/qRCZB31g/d7946088-4316-4629-9666-5c5bb0e402ff.jpg" alt="Unha decorada 6" />
     </div>
-<!-- Cursos Disponíveis -->
-<section class="cursos-disponiveis" style="text-align:center; padding: 40px 20px;">
-  <h2 style="color:#D9B030;">Cursos Disponíveis</h2>
-  <img src=" https://i.postimg.cc/26npnmcH/Curso-manicure-prospectar-clientes-moderno-branco-dourado-story-zip-1.png" alt="Curso Disponível" style="max-width: 300px; width: 100%; border-radius: 10px; margin: 20px auto; display: block;" />
-  <a href="https://wa.me/5579998907871?text=Olá%20Raíssa%2C%20gostaria%20de%20me%20inscrever%20no%20curso%20disponível." 
-     target="_blank"
-     style="display: inline-block; background-color: #D9B038; color: #fff; padding: 12px 25px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 1.1em;">
-    Inscreva-se
-  </a>
-</section>
+
+  <!-- Cursos Disponíveis -->
+  <section class="cursos-disponiveis" style="text-align:center; padding: 40px 20px;">
+    <h2 style="color:#D9B030;">Cursos Disponíveis</h2>
+    <img src="https://i.postimg.cc/26npnmcH/Curso-manicure-prospectar-clientes-moderno-branco-dourado-story-zip-1.png" alt="Curso Disponível" style="max-width: 300px; width: 100%; border-radius: 10px; margin: 20px auto; display: block;" />
+    <a href="https://wa.me/5579998907871?text=Olá%20Raíssa%2C%20gostaria%20de%20me%20inscrever%20no%20curso%20disponível." 
+       target="_blank"
+       style="display: inline-block; background-color: #D9B038; color: #fff; padding: 12px 25px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 1.1em;">
+      Inscreva-se
+    </a>
+  </section>
 
   <!-- Serviços -->
   <section class="servicos">
@@ -280,14 +295,14 @@
     <h2>AVISO</h2>
     <p>Em caso de cancelamento do agendemento, pagará 30% do valor do procedimento agendado</p>
     <iframe 
-  src="https://www.google.com/maps?q=Praça+Helena+de+Oliveira+Ribeiro,+Salgado,+SE&output=embed" 
-  width="100%" 
-  height="300" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+      src="https://www.google.com/maps?q=Praça+Helena+de+Oliveira+Ribeiro,+Salgado,+SE&output=embed" 
+      width="100%" 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </section>
 
   <!-- Rodapé -->
